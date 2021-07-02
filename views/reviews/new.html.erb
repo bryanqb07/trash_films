@@ -1,0 +1,25 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action=<%= "/films/#{@film.id}/reviews" %> method="POST">
+  <label>Reviewer Name
+    <input type="text" name="review[reviewer_name]" value="<%= @review.reviewer_name %>">
+  </label>
+
+  <%# <label>Form Authenticity Token %>
+  <%#   <input type="text" name="authenticity_token" value="<%= form_authenticity_token %1>"> %>
+  <%# </label> %>
+
+  <label>Comment
+    <textarea name="review[content]" value="<%= @review.content %>"></textarea>
+  </label>
+
+  <label>Rating
+    <input type="number" name="review[rating]" value="<%= @review.rating %>">
+  </label>
+
+  <input type="submit">
+</form>

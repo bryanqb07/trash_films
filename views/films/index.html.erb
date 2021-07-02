@@ -1,3 +1,9 @@
+<h1>Trash Films</h1>
+<h4>A website for trash film lovers everywhere</h4>
+<a href="/films/new">Register new Trash Film!</a>
+<h4>Current Film Archive</h4>
 <% @films.each do |film| %>
- <p><%= film.name %> </p>
+  <a href=<%= "/films/#{film.id}" %>><%= film.name %></a>
 <% end %>
+
+

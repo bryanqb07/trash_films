@@ -11,12 +11,12 @@ CREATE TABLE reviews (
 CREATE TABLE films (
   id INTEGER PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-	content TEXT NOT NULL,
+	description TEXT NOT NULL,
 	imdb_link VARCHAR(255)
 );
 
 INSERT INTO
-  films (id, name, content, imdb_link)
+  films (id, name, description, imdb_link)
 VALUES
   (1, "The Room", "The quintessential trash film.", "https://www.imdb.com/title/tt0368226/"), 
 	(2, "Troll 2", "Classic trash", "https://www.imdb.com/title/tt0105643/?ref_=nv_sr_srsg_0"),

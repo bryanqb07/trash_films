@@ -1,0 +1,25 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/films" method="POST">
+  <label>Name
+    <input type="text" name="film[name]" value="<%= @film.name %>">
+  </label>
+
+  <%# <label>Form Authenticity Token %>
+  <%#   <input type="text" name="authenticity_token" value="<%= form_authenticity_token %1>"> %>
+  <%# </label> %>
+
+  <label>Description
+    <textarea name="film[description]" value="<%= @film.description %>"></textarea>
+  </label>
+
+  <label>Imdb Link
+    <input type="text" name="film[imdb_link]" value="<%= @film.imdb_link %>">
+  </label>
+
+  <input type="submit">
+</form>

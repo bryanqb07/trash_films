@@ -1,0 +1,14 @@
+<h1> <%= @film.name %> </h1>
+<p> <%= @film.description %></p>
+<p> Average Rating: <%= @film.average_rating %></p>
+<a href=<%= @film.imdb_link %>>Imdb Link</a>
+<br/>
+<br/>
+<a href=<%= "/films/#{@film.id}/reviews/new" %>>Add Review</a>
+
+<h3>Ratings</h3>
+<% @film.reviews.each do |review| %>
+  <p><%= review.reviewer_name %></p>
+  <p><%= review.content %></p>
+  <p>Rating: <%= review.rating %></p>
+<% end %>

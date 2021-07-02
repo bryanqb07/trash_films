@@ -2,28 +2,21 @@ require 'rack'
 require 'railz_lite/controllers/static'
 require 'railz_lite/controllers/show_exceptions'
 require 'railz_lite/controllers/router'
-require 'railz_lite'
+require_relative '../controllers/films_controller'
+require_relative '../controllers/reviews_controller'
+require 'byebug'
 
-class Film < RailzLite::SQLObject
-  finalize!
-end
-
-# example controller config
- class WelcomeController < RailzLite::ControllerBase
-   def index; end
- end
-
- class FilmsController < RailzLite::ControllerBase
-   def index
-     @films = Film.all
-   end
- end
 
 router = Router.new
 router.draw do
   # add routes here
-  get Regexp.new('^/$'), WelcomeController, :index
-  get Regexp.new('^/films$'), FilmsController, :index
+  get Regexp.new('^/$'), FilmsController, :index
+  get Regexp.new("^/films/(?<id>\\d+)$"), FilmsController, :show
+  get Regexp.new("^/films/new$"), FilmsController, :new
+  post Regexp.new("^/films$"), FilmsController, :create
+
+  get Regexp.new("^/films/(?<film_id>\\d+)/reviews/new$"), ReviewsController, :new
+  post Regexp.new("^/films/(?<film_id>\\d+)/reviews$"), ReviewsController, :create
 end
 
 app = Proc.new do |env|
