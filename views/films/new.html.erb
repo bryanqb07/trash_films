@@ -4,10 +4,13 @@
   <% end %>
 <% end %>
 
+<h1>Register New Film</h1>
 <form action="/films" method="POST">
   <label>Name
     <input type="text" name="film[name]" value="<%= @film.name %>">
   </label>
+  <br />
+  <br />
 
   <%# <label>Form Authenticity Token %>
   <%#   <input type="text" name="authenticity_token" value="<%= form_authenticity_token %1>"> %>
@@ -16,10 +19,14 @@
   <label>Description
     <textarea name="film[description]" value="<%= @film.description %>"></textarea>
   </label>
+  <br />
+  <br />
 
   <label>Imdb Link
     <input type="text" name="film[imdb_link]" value="<%= @film.imdb_link %>">
   </label>
+  <br />
+  <br />
 
   <input type="submit">
 </form>

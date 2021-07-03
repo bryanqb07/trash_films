@@ -5,10 +5,17 @@
 <br/>
 <br/>
 <a href=<%= "/films/#{@film.id}/reviews/new" %>>Add Review</a>
+<br/>
+<br/>
 
 <h3>Reviews</h3>
-<% @film.reviews.each do |review| %>
-  <p><%= review.reviewer_name %></p>
-  <p><%= review.content %></p>
-  <p>Rating: <%= review.rating %></p>
-<% end %>
+<div class="review-box">
+  <% @film.reviews.each do |review| %>
+    <div class="review-wrapper">
+      <p><span class="green mr-8"><%= review.reviewer_name%></span>
+      <span class="mr-8"><%= review.content %></span>
+      <span class="green">Rating: <%= review.rating %></span>
+      </p>
+    </div>
+  <% end %>
+</div>

@@ -1,1 +1,33 @@
+body {
+	background-color: #111;
+	color: white;
+	margin-top: 24px;
+}
+
+a {
+	/* color: #818181; */
+  color:#3ff731;
+	text-decoration: none;
+}
+
+.green {
+  color:#3ff731;
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.pl-16 {
+	padding-left: 16px;
+}
+
+.mr-8 {
+	margin-right: 8px;
+}
+
+.films-wrapper {
+	max-width: 700px;
+	margin: 0 auto;
+}
 

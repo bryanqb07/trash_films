@@ -4,10 +4,13 @@
   <% end %>
 <% end %>
 
+<h1>Register New Review</h1>
 <form action=<%= "/films/#{@film.id}/reviews" %> method="POST">
   <label>Reviewer Name
     <input type="text" name="review[reviewer_name]" value="<%= @review.reviewer_name %>">
   </label>
+  <br/>
+  <br/>
 
   <%# <label>Form Authenticity Token %>
   <%#   <input type="text" name="authenticity_token" value="<%= form_authenticity_token %1>"> %>
@@ -16,10 +19,17 @@
   <label>Comment
     <textarea name="review[content]" value="<%= @review.content %>"></textarea>
   </label>
+  <br/>
+  <br/>
 
   <label>Rating
-    <input type="number" name="review[rating]" min="1" max="5" step="1" value="<%= @review.rating %>">
+    <% (1..5).each do |num| %>
+      <input type="radio" name="review[rating]" id=<%= "radio_button_id#{num}" %> value=<%= "#{num}" %>>
+      <label for=<%= "radio_button_id#{num}" %>><%= num %></label>
+    <% end %>
   </label>
+  <br/>
+  <br/>
 
   <input type="submit">
 </form>

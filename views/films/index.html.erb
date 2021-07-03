@@ -1,8 +1,10 @@
-<h1>Trash Films</h1>
+<h1>Trash Films <img src="public/trash_can.png" /></h1>
 <h4>A website for trash film lovers everywhere</h4>
 <a href="/films/new">Register new Trash Film!</a>
 <h4>Current Film Archive</h4>
-<% @films.each do |film| %>
-  <a href=<%= "/films/#{film.id}" %>><%= film.name %></a>
-<% end %>
+<div class="films-wrapper">
+  <% @films.each do |film| %>
+    <a class="mr-8" href=<%= "/films/#{film.id}" %>><%= film.name %></a>
+  <% end %>
+</div>
 

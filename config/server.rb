@@ -4,6 +4,7 @@ require 'railz_lite/controllers/show_exceptions'
 require 'railz_lite/controllers/router'
 require_relative '../controllers/films_controller'
 require_relative '../controllers/reviews_controller'
+require 'byebug'
 
 class DummyController < RailzLite::ControllerBase
   def index
