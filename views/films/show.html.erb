@@ -6,7 +6,7 @@
 <br/>
 <a href=<%= "/films/#{@film.id}/reviews/new" %>>Add Review</a>
 
-<h3>Ratings</h3>
+<h3>Reviews</h3>
 <% @film.reviews.each do |review| %>
   <p><%= review.reviewer_name %></p>
   <p><%= review.content %></p>
