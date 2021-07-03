@@ -40,5 +40,5 @@ end.to_app
 
 Rack::Server.start(
  app: app,
- Port: 3000
+ Port: ENV['PORT'] || 3000
 )
