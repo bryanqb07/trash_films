@@ -6,11 +6,17 @@ require_relative '../controllers/films_controller'
 require_relative '../controllers/reviews_controller'
 require 'byebug'
 
+class DummyController < RailzLite::ControllerBase
+  def index
+    redirect_to('/films')
+  end
+end
 
 router = Router.new
 router.draw do
   # add routes here
-  get Regexp.new('^/$'), FilmsController, :index
+  get Regexp.new('^/$'), DummyController, :index
+  get Regexp.new('^/films$'), FilmsController, :index
   get Regexp.new("^/films/(?<id>\\d+)$"), FilmsController, :show
   get Regexp.new("^/films/new$"), FilmsController, :new
   post Regexp.new("^/films$"), FilmsController, :create

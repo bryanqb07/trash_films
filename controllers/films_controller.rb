@@ -18,7 +18,7 @@ require_relative '../models/film'
      @film = Film.new(params['film'])
      if @film.save
        flash[:notice] = 'Saved film successfully'
-       redirect_to '/'
+       redirect_to '/films'
      else
        flash.now[:errors] = 'error creating film'
        render :new
