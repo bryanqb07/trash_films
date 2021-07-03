@@ -2,4 +2,4 @@
 
 source "https://rubygems.org"
 
- gem "railz_lite"
+gem "railz_lite"
